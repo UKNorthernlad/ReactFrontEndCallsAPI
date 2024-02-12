@@ -10,11 +10,10 @@ interface ListGroupProps
 
 interface TrackEntry
 {
-    albumId: string;
-    id: string;
-    title:  string;
-    url:  string;
-    thumbnailUrl:  string;
+    name: string;
+    password: string;
+    profession:  string;
+    id:  number;
 }
 
 function ListGroup(props: ListGroupProps) {
@@ -36,7 +35,7 @@ function ListGroup(props: ListGroupProps) {
                 setSelectedIndex(index),
                 props.onSelectItem(index)
                 }
-            }>({index}) - {item.title}
+            }>({index}) - {item.name}
         </li>
         ))
         }

@@ -20,10 +20,13 @@ function App() {
   // Get data from API
   const [data, setData] = useState<any>([]);
 
+
+  // https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5
+
   useEffect(() => {
     // Make an API request when the component mounts
     {console.log("Calling API")}
-    fetch('https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5')
+    fetch('http://localhost:8080/listusers')
       .then((response) => response.json())
       .then((data) => {
         // Handle the response data
