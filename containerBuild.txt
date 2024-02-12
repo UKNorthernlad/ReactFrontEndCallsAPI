@@ -1,2 +1,4 @@
 docker build -t reactfrontendcallsapi:latest .
-docker run -p 5173:5173 reactfrontendcallsapi:latest
+docker run -p 80:80 reactfrontendcallsapi:latest
+docker tag reactfrontendcallsapi:latest XXXXXX/reactfrontendcallsapi:latest
+docker push XXXXXX/reactfrontendcallsapi:latest
