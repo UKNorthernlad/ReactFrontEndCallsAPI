@@ -23,10 +23,12 @@ function App() {
 
   // https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5
 
+  const url = process.env.BACKENDAPI || 'localhost'
+  
   useEffect(() => {
     // Make an API request when the component mounts
     {console.log("Calling API")}
-    fetch('http://localhost:8080/listusers')
+    fetch('http://' + url + ':8080/listusers')
       .then((response) => response.json())
       .then((data) => {
         // Handle the response data
