@@ -13,6 +13,8 @@ npm install
 npm run dev
 ```
 
+## Backend
+There is backend called "NodeAPICallsCosmosDB" which is designed to work with this front end.
 
 ## Documentation
 https://vitejs.dev/guide/
