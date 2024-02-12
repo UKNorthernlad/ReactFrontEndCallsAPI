@@ -7,4 +7,8 @@ export default defineConfig({
   //  cors : {origin: "http://localhost:8080/listusers"}
   //},
   plugins: [react()],
+  server: {
+    host: true,
+    port: 80
+  }
 })
