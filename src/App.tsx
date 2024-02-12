@@ -63,7 +63,7 @@ function App() {
 
       {selectedListItem === 2 &&  
         <Alert>
-          <h2>There are long lead times on this option</h2>
+          <h2>Warning: Known to fight chickens</h2>
         </Alert> 
       }
     </>
