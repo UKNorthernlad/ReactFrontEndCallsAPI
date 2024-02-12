@@ -1,5 +1,6 @@
 import { useState } from "react";
 //import { MouseEvent } from "react";
+import Alert from './Alert'
 
 interface ListGroupProps
 {
@@ -14,11 +15,13 @@ interface TrackEntry
     password: string;
     profession:  string;
     id:  number;
+    chickenFights: boolean;
 }
 
 function ListGroup(props: ListGroupProps) {
 
     const [selectedIndex, setSelectedIndex] = useState(-1);
+    const [fightsChickens, setfightsChickens] = useState(false);
 
     return (
         <>
@@ -30,18 +33,30 @@ function ListGroup(props: ListGroupProps) {
         {props.items.map((item: TrackEntry, index) => (
         <li 
             className={selectedIndex === index ? "list-group-item active" :  "list-group-item"}
-            key={index} 
+            key={item.id} 
             onClick={() => {
-                setSelectedIndex(index),
-                props.onSelectItem(index)
-                }
-            }>({index}) - {item.name}
+                                setSelectedIndex(index);
+                                props.onSelectItem(index);
+                                if (item.chickenFights === true) {
+                                    setfightsChickens(true)
+                                } else {
+                                    setfightsChickens(false)
+                                }
+                            }
+            }>({index}) - Name = {item.name} - ID = {item.id}
         </li>
         ))
         }
 
         </ul>
         Currently selected index = {selectedIndex}
+
+        {fightsChickens === true &&  
+        <Alert>
+          <h2>Known to fight chickens</h2>
+          <img width="100px" src="https://wallpapercave.com/wp/Nz3QYab.jpg" />
+        </Alert> 
+      }
         </>
     )
 }

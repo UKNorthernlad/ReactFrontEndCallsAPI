@@ -63,7 +63,7 @@ function App() {
 
       {selectedListItem === 2 &&  
         <Alert>
-          <h2>Warning: Known to fight chickens</h2>
+          <h2>Warning: Try to avoid selecting item with index 2!</h2>
         </Alert> 
       }
     </>
