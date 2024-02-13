@@ -23,12 +23,10 @@ function App() {
 
   // https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5
 
-  const url = process.env.BACKENDAPI || 'localhost'
-  
   useEffect(() => {
     // Make an API request when the component mounts
     {console.log("Calling API")}
-    fetch('http://' + url + ':8080/listusers')
+    fetch('http://apibackendcosmosdb:8080/listusers')
       .then((response) => response.json())
       .then((data) => {
         // Handle the response data
@@ -50,12 +48,6 @@ function App() {
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src="/public/icons/security/10433-icon-service-User-Settings.svg" width="40px" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src="/public/icons/databases/10121-icon-service-Azure-Cosmos-DB.svg" width="40px" />
         </a>
       </div>
 
